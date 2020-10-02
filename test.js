@@ -3,7 +3,7 @@ var openlife = require("openlife");
 var Test = function() {
     this.engine = openlife.Engine.create(this);
     this.engine.client.config = {
-        ip: "thinqbator.app"
+        ip: "bigserver2.onehouronelife.com"
     };
     this.engine.client.onClose = function()
     {
