@@ -16,6 +16,11 @@ var Test = function() {
 Test.prototype = {
     playerUpdate: function(instances) {
         console.log("instance " + instances);
+        if (this.player == null) 
+        {
+            this.player = instances.pop();
+            this.engine.program.setPlayer(this.player);
+        }
     },
     playerMoveStart: function(move) {},
     playerOutOfRange: function(list) {},
@@ -40,7 +45,12 @@ Test.prototype = {
     babyWiggle: function(list) {},
     saysLocation: function(x, y, text) {},
     dying: function(id, sick) {},
-    says: function(id, text, curse) {},
+    says: function(id, text, curse) {
+        console.log("text: " + text);
+        if (text.indexOf("BOT") > -1) {
+            console.log("THAT IS ME");
+        }
+    },
     emot: function(id, index, sec) {},
     mapChunk: function(instance) {},
     mapChange: function(change) {},
